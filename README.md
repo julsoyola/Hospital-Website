@@ -1,10 +1,18 @@
 # Hospital-Website
-Hospital Website: Users can log in and check there test results. Admin accounts have access to send test results, update existing ones and add new patients. 
+User can log in and check current test results. 
+
+Admin accounts can: 
+Find current Patients
+Add new Patients
+Add Test Results
+Update Test Results
+
+All data is being encrypted and checked before being updated in the database. 
 
 To run this: Just run main.py 
 Main.py will run the two DBs (Patients and TestResults) 
 
-Then it runs a server needed for the site
-Then it runs the Patient Site
+Then it runs a server 'startServer.py'
+Then it runs the site 'patientSite.py'
 
-The server is used to encrypt/decrypt and check incoming data before being updated in the DB
+

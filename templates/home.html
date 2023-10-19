@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <style>
+        body { /*Background of page ? */
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #fef2f9;
+        }
+
+        .container {
+           text-align: center;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Two columns with equal width */
+            grid-gap: 20px; /* Spacing between columns and rows */
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .box {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: block;
+            box-shadow: 0px 0px 15px 0px rgba(255, 99, 71, 0.2);
+            background-color: #ffffff; /* Box background color */
+        }
+
+        .box h1 {
+            color: #f978bd; /* Heading color */
+        }
+
+        .box h2 a {
+            color: #fba9d5; /* Link color */
+            text-decoration: none;
+        }
+
+        .box h2 a:hover {
+            text-decoration: underline;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            color: #f860b1; /* Flash message color */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+        {% if session['logged_in'] %}
+            <div class="box">
+                <h1>Welcome </h1>
+                <h1>{{ name }}</h1>
+                {% if session['admin'] %}
+                    <div class="box">
+                        <h2><a href="/list">List Patients</a></h2>
+                    </div>
+                    <div class="box">
+                        <h2><a href="/enternew">Add New Patient</a></h2>
+                    </div>
+                <div class="box">
+                       <h2><a href="/testresults">Send Test Results</a></h2>
+                    </div>
+                  <div class="box">
+                   <h2><a href="/encryptresult">Send Test Result Update Using HMAC</a></h2>
+                    </div>
+                {% endif %}
+                <div class="box">
+                   <h2><a href="/userinfo">Show Your Info</a></h2>
+                    </div>
+                  <div class="box">
+                   <h2><a href="/showresults">Show Your Test Results</a></h2>
+                    </div>
+                <div class="box">
+                    <h2><a href="/logout">Log out</a></h2>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

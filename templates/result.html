@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>Query Result</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #f7c5da; /* Cute pastel pink background color */
+            color: #ff85a2; /* Light pastel pink text color */
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        a {
+            color: #ff85a2; /* Light pastel pink link color */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body data-gr-c-s-loaded="true">
+
+    <h1>Query Result:</h1>
+    {% for message in msg.split('\n') %}
+    <p>{{ message }}</p>
+    {% endfor %}
+
+    <h2><a href="/">Back to Home</a></h2>
+
+</body>
+</html>

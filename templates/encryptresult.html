@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <style>
+        body {
+            margin: 0;
+            background-color: #e6f5e0; /* Pastel green background color */
+            background-image: url(https://gifdb.com/images/high/green-aesthetic-anime-leaves-dew-6e1pih36e296gu3z.webp); /* Path to image */
+            color: #35523e; /* Darker pastel green text color */
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        form {
+            background-color: #cde7d9; /* Lighter pastel green form background color */
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 0px 10px 0px rgba(130, 209, 151, 0.65);
+        }
+        h3 {
+            color: #35523e; /* Darker pastel green heading color */
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #35523e; /* Darker pastel green border color */
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #35523e; /* Darker pastel green submit button color */
+            color: #e6f5e0; /* Light pastel green text color for the button */
+            border: none;
+            border-radius: 5px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #6b8c66; /* Slightly darker pastel green on hover */
+        }
+    </style>
+</head>
+<body data-gr-c-s-loaded="true">
+
+    <form action="{{ url_for('sendResults_Encrypted') }}"  method="POST">
+        <h3>Update Test Results</h3>
+        Test Result Id<br>
+        <input type="text" name="TestResultId" required><br>
+
+        Test Results<br>
+        <input type="text" name="TestResult" required><br>
+        <input type="submit" value="Submit"><br>
+    </form>
+
+</body>
+</html>
